@@ -1,1 +1,0 @@
-export { HEROES } from './heroes';
