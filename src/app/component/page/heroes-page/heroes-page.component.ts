@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 import { Hero } from 'src/app/model';
-
-import { HEROES } from 'src/app/mock';
+import { HeroService } from 'src/app/service/hero.service';
+import { MessageService } from 'src/app/service/message.service';
 
 @Component({
   selector: 'app-heroes-page',
@@ -10,10 +10,26 @@ import { HEROES } from 'src/app/mock';
   styleUrls: ['./heroes-page.component.scss'],
 })
 export class HeroesPageComponent {
-  public heroes: Hero[] = HEROES;
+  public heroes: Hero[] = [];
   public heroSelected?: Hero;
 
-  public onSelect(hero: Hero): void {
+  constructor(
+    private heroService: HeroService,
+    private messageService: MessageService
+  ) {}
+
+  ngOnInit(): void {
+    this.initHeroes();
+  }
+
+  public initHeroes(): void {
+    this.heroService
+      .getHeroes()
+      .subscribe((heroes: Hero[]) => (this.heroes = heroes));
+  }
+
+  public onHeroSelected(hero: Hero): void {
     this.heroSelected = hero;
+    this.messageService.add(`HeroesPageComponent: hero id=${hero.id} selected`);
   }
 }
