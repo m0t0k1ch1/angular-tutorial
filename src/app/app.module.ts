@@ -6,18 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { DashboardPageComponent } from './component/page/dashboard-page/dashboard-page.component';
 import { HeroesPageComponent } from './component/page/heroes-page/heroes-page.component';
+import { HeroPageComponent } from './component/page/hero-page/hero-page.component';
 
-import { HeroDetailComponent } from './component/element/hero-detail/hero-detail.component';
 import { MessagesComponent } from './component/element/messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 
+    DashboardPageComponent,
     HeroesPageComponent,
+    HeroPageComponent,
 
-    HeroDetailComponent,
     MessagesComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
