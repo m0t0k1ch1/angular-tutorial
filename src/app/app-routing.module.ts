@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardPageComponent },
       { path: 'heroes', component: HeroesPageComponent },
-      { path: 'heroes/:id', component: HeroPageComponent },
+      { path: 'hero/:id', component: HeroPageComponent },
     ],
   },
 ];
