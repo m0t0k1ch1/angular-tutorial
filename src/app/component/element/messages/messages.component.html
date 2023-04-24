@@ -1,10 +1,12 @@
-<div
-  *ngIf="messageService.messages.length > 0"
-  class="flex flex-col items-start gap-8"
->
+<div class="flex flex-col items-start gap-8">
   <h2 class="text-2xl font-bold">Messages</h2>
   <div class="flex flex-col items-start">
-    <span *ngFor="let message of messageService.messages">{{ message }}</span>
+    <ng-template [ngIf]="messageService.messages.length > 0" [ngIfElse]="empty">
+      <span *ngFor="let message of messageService.messages">{{ message }}</span>
+    </ng-template>
+    <ng-template #empty>
+      <span class="text-gray-400">None</span>
+    </ng-template>
   </div>
   <button mat-stroked-button (click)="messageService.clear()">
     Clear messages
