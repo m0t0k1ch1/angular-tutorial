@@ -1,8 +1,13 @@
-<h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/heroes/{{ hero.id }}">
-      <span class="badge">{{ hero.id }}</span> {{ hero.name }}
-    </a>
-  </li>
-</ul>
+<div class="flex flex-col items-start gap-8">
+  <h2 class="text-2xl font-bold">My Heroes</h2>
+  <div class="flex flex-wrap gap-2">
+    <button
+      *ngFor="let hero of heroes"
+      mat-flat-button
+      color="primary"
+      routerLink="/heroes/{{ hero.id }}"
+    >
+      {{ hero.id }}. {{ hero.name }}
+    </button>
+  </div>
+</div>

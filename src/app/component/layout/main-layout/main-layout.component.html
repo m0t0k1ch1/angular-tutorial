@@ -1,0 +1,28 @@
+<div class="container mx-auto flex flex-col gap-8 py-16">
+  <header class="flex flex-col items-start gap-8 p-4">
+    <h1 class="text-4xl font-bold">{{ title }}</h1>
+    <mat-button-toggle-group>
+      <mat-button-toggle
+        routerLink="/dashboard"
+        routerLinkActive
+        #dashboard="routerLinkActive"
+        [checked]="dashboard.isActive"
+        >Dashboard</mat-button-toggle
+      >
+      <mat-button-toggle
+        routerLink="/heroes"
+        routerLinkActive
+        #heroes="routerLinkActive"
+        [checked]="heroes.isActive"
+        >Heroes</mat-button-toggle
+      >
+    </mat-button-toggle-group>
+  </header>
+  <main class="p-4">
+    <router-outlet></router-outlet>
+  </main>
+  <mat-divider></mat-divider>
+  <footer class="p-4">
+    <app-messages></app-messages>
+  </footer>
+</div>

@@ -20,6 +20,6 @@ export class DashboardPageComponent implements OnInit {
   private initHeroes(): void {
     this.heroService
       .getHeroes()
-      .subscribe((heroes: Hero[]) => (this.heroes = heroes.slice(1, 5)));
+      .subscribe((heroes: Hero[]) => (this.heroes = heroes.slice(0, 5)));
   }
 }

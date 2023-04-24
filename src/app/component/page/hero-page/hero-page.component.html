@@ -1,9 +1,14 @@
-<div *ngIf="!!hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ hero.id }}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name" />
+<div *ngIf="!!hero" class="flex flex-col items-start gap-8">
+  <h2 class="text-2xl font-bold">{{ hero.name | uppercase }} Details</h2>
+  <div class="flex flex-col items-start">
+    <mat-form-field>
+      <mat-label>ID</mat-label>
+      <input matInput [value]="hero.id" readonly />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="hero.name" />
+    </mat-form-field>
   </div>
-  <button type="button" (click)="goBack()">go back</button>
+  <button mat-stroked-button (click)="goBack()">Go back</button>
 </div>
