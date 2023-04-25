@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
@@ -10,6 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { InMemoryDataService } from './service/in-memory-data.service';
 
 import { AppComponent } from './app.component';
 
@@ -36,7 +40,11 @@ import { MessagesComponent } from './component/element/messages/messages.compone
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
 
     MatButtonModule,
     MatButtonToggleModule,
