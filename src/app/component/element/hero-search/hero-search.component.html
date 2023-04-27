@@ -1,0 +1,13 @@
+<div class="flex flex-col items-start gap-2">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput #name (input)="search(name.value)" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <mat-chip-set>
+    <app-hero-chip
+      *ngFor="let hero of heroes$ | async"
+      [hero]="hero"
+    ></app-hero-chip>
+  </mat-chip-set>
+</div>

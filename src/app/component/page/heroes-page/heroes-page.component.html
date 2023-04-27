@@ -3,15 +3,13 @@
   <div class="flex flex-col items-start">
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput #heroName />
+      <input matInput #name />
     </mat-form-field>
-    <button mat-flat-button color="primary" (click)="addHero(heroName.value)">
+    <button mat-flat-button color="primary" (click)="addHero(name.value)">
       Add hero
     </button>
   </div>
   <mat-chip-set>
-    <mat-chip *ngFor="let hero of heroes" routerLink="/hero/{{ hero.id }}">
-      {{ hero.id }}. {{ hero.name }}
-    </mat-chip>
+    <app-hero-chip *ngFor="let hero of heroes" [hero]="hero"></app-hero-chip>
   </mat-chip-set>
 </div>

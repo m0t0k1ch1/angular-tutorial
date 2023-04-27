@@ -10,6 +10,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,8 @@ import { DashboardPageComponent } from './component/page/dashboard-page/dashboar
 import { HeroesPageComponent } from './component/page/heroes-page/heroes-page.component';
 import { HeroPageComponent } from './component/page/hero-page/hero-page.component';
 
+import { HeroChipComponent } from './component/element/hero-chip/hero-chip.component';
+import { HeroSearchComponent } from './component/element/hero-search/hero-search.component';
 import { MessagesComponent } from './component/element/messages/messages.component';
 
 @NgModule({
@@ -36,6 +39,8 @@ import { MessagesComponent } from './component/element/messages/messages.compone
     HeroesPageComponent,
     HeroPageComponent,
 
+    HeroChipComponent,
+    HeroSearchComponent,
     MessagesComponent,
   ],
   imports: [
@@ -52,6 +57,7 @@ import { MessagesComponent } from './component/element/messages/messages.compone
     MatChipsModule,
     MatDividerModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
 
     AppRoutingModule,
