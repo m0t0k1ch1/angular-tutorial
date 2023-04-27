@@ -1,13 +1,8 @@
 <div class="flex flex-col items-start gap-8">
   <h2 class="text-2xl font-bold">Top Heroes</h2>
-  <div class="flex flex-wrap gap-2">
-    <button
-      *ngFor="let hero of heroes"
-      mat-flat-button
-      color="primary"
-      routerLink="/hero/{{ hero.id }}"
-    >
+  <mat-chip-set>
+    <mat-chip *ngFor="let hero of heroes" routerLink="/hero/{{ hero.id }}">
       {{ hero.id }}. {{ hero.name }}
-    </button>
-  </div>
+    </mat-chip>
+  </mat-chip-set>
 </div>

@@ -22,4 +22,16 @@ export class HeroesPageComponent implements OnInit {
       .getHeroes()
       .subscribe((heroes: Hero[]) => (this.heroes = heroes));
   }
+
+  public addHero(name: string): void {
+    name = name.trim();
+
+    if (name.length === 0) {
+      return;
+    }
+
+    this.heroService
+      .addHero({ name } as Hero)
+      .subscribe((hero) => this.heroes.push(hero));
+  }
 }

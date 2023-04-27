@@ -60,7 +60,7 @@ export class HeroService {
 
   public addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(`api/heroes`, hero, this.HTTP_OPTIONS).pipe(
-      tap((heroAdded: Hero) => this.log(`hero id=${heroAdded} added`)),
+      tap((heroAdded: Hero) => this.log(`hero id=${heroAdded.id} added`)),
       catchError(this.handleError<Hero>('addHero'))
     );
   }

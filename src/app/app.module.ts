@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -48,6 +49,7 @@ import { MessagesComponent } from './component/element/messages/messages.compone
 
     MatButtonModule,
     MatButtonToggleModule,
+    MatChipsModule,
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,

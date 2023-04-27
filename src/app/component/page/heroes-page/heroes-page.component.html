@@ -1,13 +1,17 @@
 <div class="flex flex-col items-start gap-8">
   <h2 class="text-2xl font-bold">My Heroes</h2>
-  <div class="flex flex-wrap gap-2">
-    <button
-      *ngFor="let hero of heroes"
-      mat-flat-button
-      color="primary"
-      routerLink="/hero/{{ hero.id }}"
-    >
-      {{ hero.id }}. {{ hero.name }}
+  <div class="flex flex-col items-start">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput #heroName />
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="addHero(heroName.value)">
+      Add hero
     </button>
   </div>
+  <mat-chip-set>
+    <mat-chip *ngFor="let hero of heroes" routerLink="/hero/{{ hero.id }}">
+      {{ hero.id }}. {{ hero.name }}
+    </mat-chip>
+  </mat-chip-set>
 </div>

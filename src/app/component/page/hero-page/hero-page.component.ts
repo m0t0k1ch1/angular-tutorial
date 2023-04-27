@@ -29,6 +29,22 @@ export class HeroPageComponent implements OnInit {
     this.heroService.getHero(id).subscribe((hero: Hero) => (this.hero = hero));
   }
 
+  public save(): void {
+    if (!this.hero) {
+      return;
+    }
+
+    this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+  }
+
+  public delete(): void {
+    if (!this.hero) {
+      return;
+    }
+
+    this.heroService.deleteHero(this.hero.id).subscribe(() => this.goBack());
+  }
+
   public goBack(): void {
     this.location.back();
   }
