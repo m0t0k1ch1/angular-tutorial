@@ -123,4 +123,10 @@ export class HousingService {
       (housingLocation) => housingLocation.id === id
     );
   }
+
+  public submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(
+      `Home application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}`
+    );
+  }
 }
