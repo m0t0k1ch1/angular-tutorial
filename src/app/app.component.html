@@ -1,8 +1,10 @@
-<header class="p-4">
-  <a [routerLink]="['/']">
-    <h1 class="text-4xl font-bold">Homes</h1>
-  </a>
-</header>
-<main class="bg-gray-100 p-4">
-  <router-outlet></router-outlet>
-</main>
+<div class="flex min-h-screen flex-col">
+  <header class="p-4">
+    <a [routerLink]="['/']">
+      <h1 class="text-4xl font-bold">Homes</h1>
+    </a>
+  </header>
+  <main class="grow bg-gray-100 p-4">
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatRippleModule } from '@angular/material/core';
 
 import { HousingLocation } from '../housing-location';
 
@@ -10,7 +12,12 @@ import { HousingLocationComponent } from '../housing-location/housing-location.c
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HousingLocationComponent],
+  imports: [
+    CommonModule,
+    MatDividerModule,
+    MatRippleModule,
+    HousingLocationComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -37,7 +44,7 @@ export class HomeComponent {
 
     this.filteredHousingLocations = this.housingLocations.filter(
       (housingLocation) =>
-        housingLocation.city.toLowerCase().includes(text.toLowerCase())
+        housingLocation.city.toLowerCase().includes(text.toLowerCase()),
     );
   }
 }
