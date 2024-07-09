@@ -8,8 +8,9 @@
   "scripts": {
     "build": "ng build",
     "commit": "cz",
-    "prepare": "husky",
-    "start": "ng serve"
+    "start-backend": "json-server --watch db.json",
+    "start-frontend": "ng serve",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {

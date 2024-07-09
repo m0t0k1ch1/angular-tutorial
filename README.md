@@ -10,6 +10,14 @@ pnpm install
 
 ## Run
 
+### Backend
+
 ```
-pnpm start
+pnpm start-backend
+```
+
+### Frontend
+
+```
+pnpm start-frontend
 ```
