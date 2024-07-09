@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 
 import { HousingLocation } from '../housing-location';
@@ -15,6 +16,7 @@ import { HousingLocationComponent } from '../housing-location/housing-location.c
   imports: [
     CommonModule,
     MatDividerModule,
+    MatIconModule,
     MatRippleModule,
     HousingLocationComponent,
   ],

@@ -1,25 +1,25 @@
-<section>
+<div class="flex flex-row gap-4">
   <input
     type="text"
-    class="rounded border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+    class="grow rounded border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
     placeholder="Filter by city"
     #filter
   />
   <button
     type="button"
-    class="ml-4 rounded bg-teal-500 px-4 py-2 font-bold text-white hover:bg-teal-600"
+    class="flex rounded bg-teal-500 p-2 font-bold text-white hover:bg-teal-600"
     matRipple
     (click)="filterResults(filter.value)"
   >
-    Search
+    <mat-icon fontIcon="search"></mat-icon>
   </button>
-</section>
+</div>
 <div class="py-4">
   <mat-divider></mat-divider>
 </div>
-<section class="flex flex-wrap gap-4">
+<div class="flex flex-wrap gap-4">
   <app-housing-location
     *ngFor="let housingLocation of filteredHousingLocations"
     [housingLocation]="housingLocation"
   ></app-housing-location>
-</section>
+</div>
