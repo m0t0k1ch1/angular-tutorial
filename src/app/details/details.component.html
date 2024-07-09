@@ -1,34 +1,69 @@
-<article>
+<div class="flex flex-col gap-4">
   <img
-    class="listing-photo"
     [src]="housingLocation?.photo"
+    class="h-72 w-96 rounded object-cover"
     alt="Exterior photo of {{ housingLocation?.name }}"
     crossorigin
   />
-  <section class="listing-description">
-    <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
-    <p class="listing-location">
-      {{ housingLocation?.city }}, {{ housingLocation?.state }}
-    </p>
-  </section>
-  <section class="listing-features">
-    <h2 class="section-heading">About this housing location</h2>
-    <ul>
-      <li>Units available: {{ housingLocation?.availableUnits }}</li>
-      <li>Does this location have wifi: {{ housingLocation?.wifi }}</li>
-      <li>Does this location have laundry: {{ housingLocation?.laundry }}</li>
-    </ul>
-  </section>
-  <section class="listing-apply">
-    <h2 class="section-heading">Apply now to live here</h2>
-    <form [formGroup]="applyForm" (submit)="submitApplication()">
-      <label for="first-name">First Name</label>
-      <input id="first-name" type="text" formControlName="firstName" />
-      <label for="last-name">Last Name</label>
-      <input id="last-name" type="text" formControlName="lastName" />
-      <label for="email">Email</label>
-      <input id="email" type="email" formControlName="email" />
-      <button type="submit" class="primary">Apply now</button>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+      <h2 class="text-4xl font-bold">{{ housingLocation?.name }}</h2>
+      <div class="flex flex-row gap-1">
+        <img src="/assets/location-pin.svg" />
+        <p>{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="text-2xl font-bold">About this housing location</h3>
+      <ul>
+        <li>Units available: {{ housingLocation?.availableUnits }}</li>
+        <li>Does this location have wifi: {{ housingLocation?.wifi }}</li>
+        <li>Does this location have laundry: {{ housingLocation?.laundry }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <h3 class="text-2xl font-bold">Apply now to live here</h3>
+    <form
+      [formGroup]="applyForm"
+      class="flex flex-col items-start gap-4"
+      (submit)="submitApplication()"
+    >
+      <div class="flex flex-col items-start gap-2">
+        <div class="flex flex-col">
+          <label for="first-name">First Name</label>
+          <input
+            id="first-name"
+            type="text"
+            formControlName="firstName"
+            class="w-64 rounded border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="last-name">Last Name</label>
+          <input
+            id="last-name"
+            type="text"
+            formControlName="lastName"
+            class="w-64 rounded border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+        </div>
+        <div class="flex flex-col">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            class="w-64 rounded border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="rounded bg-teal-500 px-4 py-2 font-bold text-white hover:bg-teal-600"
+      >
+        Apply now
+      </button>
     </form>
-  </section>
-</article>
+  </div>
+</div>
